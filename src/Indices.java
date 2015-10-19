@@ -7,11 +7,16 @@ public class Indices {
     }
 
     public int hashCode() {
-        return (new Integer(i)).hashCode() * 127 + (new Integer(j)).hashCode();
+        return (new Integer(i)).hashCode() + (new Integer(j)).hashCode();
     }
 
-    public boolean equals(Indices b) {
-        return (i == b.i) && (j == b.j);
+    public boolean equals(Object b) {
+        if (!(b instanceof  Indices)) {
+            return false;
+        } else {
+            Indices a = (Indices) b;
+            return (i == a.i) && (j == a.j);
+        }
     }
 
     public String toString() {

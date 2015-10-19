@@ -1,4 +1,4 @@
 public interface Vector {
-    public int getLength();
-    public int get(int i);
+    int getLength();
+    int get(int i);
 }

@@ -28,7 +28,7 @@ public class SparseMatrix extends Matrix {
         Iterator it = entries.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
-            result.put(((Indices) pair.getKey()).j, ((Indices) pair.getKey()).i,(int) pair.getValue());
+            result.put(((Indices) pair.getKey()).j, ((Indices) pair.getKey()).i, (int) pair.getValue());
         }
         return new SparseMatrix(result);
     }
@@ -60,7 +60,8 @@ public class SparseMatrix extends Matrix {
                     int ii = ((Indices) pair.getKey()).i;
                     int jj = ((Indices) pair.getKey()).j;
                     if (i == ii) {
-                        result += (int) pair.getValue() * (b.entries.get(new Indices(jj, j)));
+                        Integer g = (b.entries.get(new Indices(jj, j)));
+                        result += (int) pair.getValue() * (g == null ? 0 : (int) g);
                     }
                 }
                 known.put(new Indices(i, j), result);

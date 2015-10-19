@@ -6,8 +6,8 @@ import static org.junit.Assert.*;
 
 public class DenseMatrixTest {
     public static final int SEED = 1;
-    public static final int N = 1000;
-    public static final int M = 1000;
+    public static final int N = 200;
+    public static final int M = 200;
     Random rnd = new Random(SEED);
 
     int[][] generateRandomIntArray(int n, int m) {
